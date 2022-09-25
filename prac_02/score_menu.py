@@ -1,3 +1,7 @@
+"""
+CP1404/CP5632 - Prac_02
+determine score status with menu and functions
+"""
 MENU = """S - Score; R - Print Result; T - Print Stars; Q - Quit"""
 
 MINIMUM_SCORE = 0
