@@ -17,7 +17,7 @@ INITIAL_PRICE = 10.0
 
 price = INITIAL_PRICE
 number_of_days = 0
-print("Starting price: ${:,.2f}".format(price))
+print(f"Starting price: ${price:,.2f}")
 
 while price >= MIN_PRICE and price <= MAX_PRICE:
     price_change = 0
@@ -33,4 +33,4 @@ while price >= MIN_PRICE and price <= MAX_PRICE:
         price_change = random.uniform(-MAX_DECREASE, 0)
     number_of_days += 1
     price *= (1 + price_change)
-    print("On day {} price is: ${:,.2f}".format(number_of_days, price))
+    print(f"On day {number_of_days} price is: ${price:,.2f}")
