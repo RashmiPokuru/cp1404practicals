@@ -18,4 +18,13 @@ print(f"The average of the numbers is {sum(numbers) / len(numbers)}")
 
 # Woefully inadequate security checker
 # Check if the user is in the list of authorised users and print access result
-
+usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface', 'BaseStdIn',
+             'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer', 'bob']
+username = input("Enter your username: ")
+# username = "Jimbo" #should print Access denied
+# username = "Inter" #should print Access denied
+# username = "jimbo" #should print Access granted
+if username in usernames:
+    print("Access granted")
+else:
+    print("Access denied")
