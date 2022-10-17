@@ -15,11 +15,9 @@ def main():
     while email != "":
         name = extract_name_from_email(email)
         name_indicator = input(f"Is your name {name}? (Y/n) ").lower()
-        if name_indicator == "" or name_indicator == "y":
-            email_to_name[email] = ' '.join(email.split('@')[0].split('.')).title()
-        else:
+        if name_indicator not in "y":
             name = input("Name: ")
-            email_to_name[email] = name
+        email_to_name[email] = name
         email = input("Email: ")
 
     print(email_to_name)
