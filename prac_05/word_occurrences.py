@@ -8,6 +8,15 @@ text = input("Text: ")
 word_to_count = {}
 words = text.split()
 print(words)
+
+
 for word in words:
     word_to_count[word] = word_to_count.get(word, 0) + 1
 print(word_to_count)
+
+try:   # handle empty string input
+    maximum_word = max([len(word) for word in word_to_count.keys()])
+    for word, count in word_to_count.items():
+        print(f"{word:{maximum_word}} : {count}")
+except ValueError:
+    print("Empty invalid string")
