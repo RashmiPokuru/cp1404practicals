@@ -17,14 +17,19 @@ def main():
         name_indicator = input(f"Is your name {name}? (Y/n) ").lower()
         if name_indicator not in "y":
             name = input("Name: ")
-        email_to_name[email] = name
+        email_to_name[email] = name.title()
         email = input("Email: ")
 
     print(email_to_name)
 
+    for email, name in email_to_name.items():
+        print(f"{name} ({email})")
+
+
 def extract_name_from_email(email):
     """extract name from email"""
-    name = ' '.join(email.split('@')[0].split('.')).title()
+    name = ' '.join(email.split('@')[0].split('.'))
     return name
+
 
 main()
