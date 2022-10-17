@@ -4,7 +4,7 @@ State names in a dictionary
 File needs reformatting
 """
 
-# TODO: Reformat this file so the dictionary code follows PEP 8 convention
+# Reformat this file so the dictionary code follows PEP 8 convention
 CODE_TO_NAME = {"QLD": "Queensland", "NSW": "New South Wales", "NT": "Northern Territory", "WA": "Western Australia",
                 "ACT": "Australian Capital Territory", "VIC": "Victoria", "TAS": "Tasmania"}
 print(CODE_TO_NAME)
@@ -16,3 +16,7 @@ while state_code != "":
     else:
         print("Invalid short state")
     state_code = input("Enter short state: ").upper()
+
+maximum_code_length = max([len(code) for code in CODE_TO_NAME])
+for code, name in CODE_TO_NAME.items():
+    print(f"{code:{maximum_code_length}} is {name}")
