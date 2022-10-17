@@ -2,17 +2,18 @@
 CP1404/CP5632 Prac 05
 count the occurrences of words in an input string
 Estimate : 30 minutes
-Actual :
+Actual : 28 minutes
 """
-text = input("Text: ")
 word_to_count = {}
-words = text.split()
-print(words)
+text = input("Text: ")
+words = sorted(text.split())
+# print(words)
 
 
 for word in words:
     word_to_count[word] = word_to_count.get(word, 0) + 1
-print(word_to_count)
+# print(word_to_count)
+
 
 try:   # handle empty string input
     maximum_word = max([len(word) for word in word_to_count.keys()])
@@ -20,3 +21,5 @@ try:   # handle empty string input
         print(f"{word:{maximum_word}} : {count}")
 except ValueError:
     print("Empty invalid string")
+
+
