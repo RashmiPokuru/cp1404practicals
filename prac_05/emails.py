@@ -4,7 +4,7 @@ extract name from input
 get name if user does not press y or enter
 print emails and names
 Estimate : 30 minutes
-Actual :  minutes
+Actual : 40 minutes
 """
 
 
