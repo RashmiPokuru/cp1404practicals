@@ -17,6 +17,6 @@ while state_code != "":
         print("Invalid short state")
     state_code = input("Enter short state: ").upper()
 
-maximum_code_length = max([len(code) for code in CODE_TO_NAME])
+maximum_code_length = max([len(code) for code in CODE_TO_NAME.keys()])
 for code, name in CODE_TO_NAME.items():
     print(f"{code:{maximum_code_length}} is {name}")
