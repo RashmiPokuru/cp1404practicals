@@ -13,11 +13,6 @@ COLOUR_TO_CODE = {"BlueViolet": "#8a2be2", "Burlywood1": "#ffd39b", "Burlywood":
 
 colour = input("Enter colour name: ")
 while colour != "":
-    try:
-        code = {colour.upper(): code for (colour, code) in COLOUR_TO_CODE.items()}.get(colour.upper())
-        print(f"{colour} is {code}")
-    except KeyError:
-        print("Invalid colour name")
+    code = {colour.upper(): code for colour, code in COLOUR_TO_CODE.items()}.get(colour.upper())
+    print(f"The code for '{colour}' is {code}")
     colour = input("Enter colour name: ")
-
-
