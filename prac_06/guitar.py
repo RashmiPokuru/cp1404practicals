@@ -10,10 +10,7 @@ class Guitar:
 
     def __init__(self, name="", year=0, cost=0):
         """
-        Construct a Guitar from the given values
-        name: string, name of guitar
-        year: integer, year of guitar
-        cost: float, cost of guitar
+        Initialise a Guitar from the given values
         """
         self.name = name
         self.year = year
