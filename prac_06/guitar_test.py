@@ -16,5 +16,9 @@ def run_tests():
     print(f"Gibson L-5 CES get_age() - Expected 100. Got {gibson_guitar.get_age()}")
     print(f"Another Guitar get_age() - Expected 9. Got {another_guitar.get_age()}")
 
+    # test is_vintage(self) method
+    print(f"Gibson L-5 CES is_vintage() - Expected True. Got {gibson_guitar.is_vintage()}")
+    print(f"Another Guitar is_vintage() - Expected False. Got {another_guitar.is_vintage()}")
+
 
 run_tests()
