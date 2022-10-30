@@ -2,8 +2,8 @@
 CP1404/CP5632 Practical - Playing the guitars
 """
 from operator import attrgetter
-
 from prac_06.guitar import Guitar
+MAXIMUM_YEAR_LENGTH = 4
 
 
 def main():
@@ -29,7 +29,7 @@ def main():
     for i, guitar in enumerate(guitars, 1):
         vintage_display = " (vintage)" if guitar.is_vintage() else ""
         print(
-            f"Guitar {i}: {guitar.name:>{maximum_name_length}} ({guitar.year:4}), "
+            f"Guitar {i}: {guitar.name:>{maximum_name_length}} ({guitar.year:{MAXIMUM_YEAR_LENGTH}}), "
             f"worth $ {guitar.cost:>{maximum_cost_length},.2f}{vintage_display}")
 
 
