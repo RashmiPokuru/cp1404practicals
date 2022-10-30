@@ -3,6 +3,7 @@ Estimate = 2 hours
 Current_time = 4:46 PM
 Actual duration =
 """
+VINTAGE_AGE = 50
 CURRENT_YEAR = 2022
 
 
@@ -22,3 +23,6 @@ class Guitar:
 
     def get_age(self):
         return CURRENT_YEAR - self.year
+
+    def is_vintage(self):
+        return self.get_age() >= VINTAGE_AGE
