@@ -3,6 +3,7 @@ CP1404/CP5632 Practical - Playing the guitars
 """
 from operator import attrgetter
 from prac_06.guitar import Guitar
+
 MAXIMUM_YEAR_LENGTH = 4
 
 
@@ -25,12 +26,15 @@ def main():
     maximum_cost_length = max(len(str(f"{guitar.cost:,.2f}")) for guitar in guitars)
     # print(maximum_name_length)
     # print(maximum_cost_length)
-    guitars.sort(key=attrgetter("year"))
-    for i, guitar in enumerate(guitars, 1):
-        vintage_display = " (vintage)" if guitar.is_vintage() else ""
-        print(
-            f"Guitar {i}: {guitar.name:>{maximum_name_length}} ({guitar.year:{MAXIMUM_YEAR_LENGTH}}), "
-            f"worth $ {guitar.cost:>{maximum_cost_length},.2f}{vintage_display}")
+    if guitars:
+        guitars.sort(key=attrgetter("year"))
+        for i, guitar in enumerate(guitars, 1):
+            vintage_display = " (vintage)" if guitar.is_vintage() else ""
+            print(
+                f"Guitar {i}: {guitar.name:>{maximum_name_length}} ({guitar.year:{MAXIMUM_YEAR_LENGTH}}), "
+                f"worth $ {guitar.cost:>{maximum_cost_length},.2f}{vintage_display}")
+    else:
+        print("No guitars exist")
 
 
 main()
