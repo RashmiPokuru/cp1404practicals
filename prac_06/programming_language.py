@@ -11,7 +11,7 @@ class ProgrammingLanguage:
         """Initialise a ProgrammingLanguage instance.
         name : string, name of programming language
         typing: string, type of typing of programming language
-        reflection: string, reflection of programming language
+        reflection: boolean, reflection of programming language
         year: integer, year of programming language
         """
         self.name = name
