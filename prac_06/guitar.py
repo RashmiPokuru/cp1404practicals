@@ -19,10 +19,13 @@ class Guitar:
         self.cost = cost
 
     def __str__(self):
+        """Return guitar details in string format"""
         return f"{self.name} ({self.year}) : ${self.cost}"
 
     def get_age(self):
+        """Return age of guitar"""
         return CURRENT_YEAR - self.year
 
     def is_vintage(self):
+        """Return True if age of guitar is 50 or more years old, else False"""
         return self.get_age() >= VINTAGE_AGE
