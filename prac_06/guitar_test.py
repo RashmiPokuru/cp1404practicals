@@ -12,5 +12,9 @@ def run_tests():
     print(f"{gibson_guitar} = Gibson L-5 CES (1922) : $16,035.40")
     print(f"{another_guitar} = Another guitar (2013) : $55,555.00")
 
+    # test get_age(self) method
+    print(f"Gibson L-5 CES get_age() - Expected 100. Got {gibson_guitar.get_age()}")
+    print(f"Another Guitar get_age() - Expected 9. Got {another_guitar.get_age()}")
+
 
 run_tests()
