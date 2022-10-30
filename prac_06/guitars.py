@@ -1,6 +1,8 @@
 """
 CP1404/CP5632 Practical - Playing the guitars
 """
+from operator import attrgetter
+
 from prac_06.guitar import Guitar
 
 
@@ -23,6 +25,8 @@ def main():
     maximum_cost_length = max(len(str(f"{guitar.cost:,.2f}")) for guitar in guitars)
     print(maximum_name_length)
     print(maximum_cost_length)
+    guitars.sort(key=attrgetter("year"))
+    print(guitars)
     for i, guitar in enumerate(guitars, 1):
         vintage_display = " (vintage)" if guitar.is_vintage() else ""
         print(
