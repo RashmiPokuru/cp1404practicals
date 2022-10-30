@@ -7,7 +7,7 @@ MAXIMUM_YEAR_LENGTH = 4
 
 
 def main():
-    """Store user's guitars in list until they enter blank name and then display details"""
+    """Store user's guitars in list until they enter blank name and then display details in sorted year order"""
     guitars = []
     print("My guitars!")
     name = input("Name: ")
