@@ -28,5 +28,11 @@ class ProgrammingLanguage:
         return self.typing == "Dynamic"
 
 
-# test = ProgrammingLanguage("test", "Static", True, 2022)
-# print(test)
+def run_tests():
+    """Run tests for the ProgrammingLanguage class"""
+    test = ProgrammingLanguage("test", "Static", True, 2022)
+    print(test)
+
+
+if __name__ == '__main__':
+    run_tests()
