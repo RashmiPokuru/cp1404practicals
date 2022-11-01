@@ -1,7 +1,7 @@
 """CP1404/CP5632 Practical - Guitar class.
 Estimate = 2 hours
 Current_time = 4:46 PM
-Actual duration =
+Actual duration = 2 and half hours
 """
 VINTAGE_AGE = 50
 CURRENT_YEAR = 2022
