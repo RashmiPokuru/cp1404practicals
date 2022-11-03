@@ -2,8 +2,10 @@
 CP1404/CP5632 Practical - Program to load and save a data file and use a list of Project objects.
 Estimate - 2 hours
 """
-MENU = "(L)oad projects\n(S)ave projects\n(D)isplay projects\n(F)ilter projects by date\n" \
-       "(A)dd new project,(U)pdate project"
+from prac_07.project import Project
+
+MENU = "(L)oad projects\n(S)ave projects\n(D)isplay projects\n(F)ilter projects by date\n(A)dd new project\n(U)pdate " \
+       "project\n(Q)uit"
 FILE_NAME = "projects.txt"
 
 
@@ -14,7 +16,7 @@ def main():
     while choice != "Q":
         if choice == "L":
             file_name = input("Enter the file name to load from: ")
-            # load_projects(file_name)
+            load_projects(file_name)
             pass
         elif choice == "S":
             file_name = input("Enter the file name to save to: ")
@@ -44,10 +46,11 @@ def load_projects(file_name):
         in_file.readline()
         for line in in_file:
             parts = line.strip().split("\t")
-            print(parts)
+            # print(parts)
             projects.append(parts)
-    return load_projects(file_name)
+    return projects
 
 
+# load_projects(FILE_NAME)
 
-
+main()
