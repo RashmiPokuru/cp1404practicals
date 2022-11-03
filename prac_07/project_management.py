@@ -55,6 +55,20 @@ def load(file_name):
     return projects
 
 
+def display(projects):
+    print("Incomplete projects: ")
+    incomplete_projects = [project for project in projects if not project.is_complete()]
+    incomplete_projects.sort()
+    for project in incomplete_projects:
+        print(project)
+    print("Completed projects:")
+    completed_projects = [project for project in projects if project.is_complete()]
+    completed_projects.sort()
+    # print(completed_projects)
+    for project in completed_projects:
+        print(project)
+    # print(projects)
+
 
 # load(FILE_NAME)
 
