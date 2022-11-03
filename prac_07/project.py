@@ -32,4 +32,5 @@ def run_tests():
     print(p.is_complete())
 
 
-run_tests()
+if __name__ == '__main__':
+    run_tests()
