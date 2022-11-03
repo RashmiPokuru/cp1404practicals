@@ -28,12 +28,20 @@ class Project:
         """Return true or False if completion percentage is 100 or not"""
         return self.completion_percentage == 100
 
+    def __lt__(self, other):
+        return self.priority < other.priority
+
 
 def run_tests():
-    p = Project(name="Build Car Park", start_date="12/09/2021", priority=2, cost_estimate=600000.0,
-                completion_percentage=95)
-    print(p)
-    print(p.is_complete())
+    p1 = Project(name="Build Car Park", start_date="12/09/2021", priority=2, cost_estimate=600000.0,
+                 completion_percentage=95)
+    p2 = Project(name="Test", start_date="14/08/2021", priority=10, cost_estimate=700.0,
+                 completion_percentage=100)
+    print(p1)
+    print(p1.is_complete())
+    print(p2)
+    print(p1.is_complete())
+    print(p1 < p2)
 
 
 if __name__ == '__main__':
