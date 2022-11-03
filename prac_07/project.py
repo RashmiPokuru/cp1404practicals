@@ -11,9 +11,9 @@ class Project:
         """Initialise a project"""
         self.name = name
         self.start_date = start_date
-        self.priority = priority
-        self.cost_estimate = cost_estimate
-        self.completion_percentage = completion_percentage
+        self.priority = int(priority)
+        self.cost_estimate = float(cost_estimate)
+        self.completion_percentage = int(completion_percentage)
 
     def __str__(self):
         """Return formatted project as string"""
