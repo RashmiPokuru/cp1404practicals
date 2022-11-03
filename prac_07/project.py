@@ -14,3 +14,11 @@ class Project:
         self.priority = priority
         self.cost_estimate = cost_estimate
         self.completion_percentage = completion_percentage
+
+    def __str__(self):
+        """Return formatted project as string"""
+        return f"{self.name}, start: {self.start_date}, priority {self.priority}, " \
+               f"estimate: ${self.cost_estimate:.2f}, completion: {self.completion_percentage}%"
+
+
+
