@@ -17,7 +17,7 @@ def main():
         if choice == "L":
             file_name = input("Enter the file name to load from: ")
             projects = load(file_name)
-            # print(projects)
+            print(f"{len(projects)} from {file_name} are loaded")
         elif choice == "S":
             file_name = input("Enter the file name to save to: ")
             # save_projects(file_name)
