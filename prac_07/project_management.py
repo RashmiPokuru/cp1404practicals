@@ -31,7 +31,7 @@ def main():
             # add_project()
             pass
         elif choice == "U":
-            # update_project()
+            update(projects)
             pass
         else:
             print("Invalid choice")
