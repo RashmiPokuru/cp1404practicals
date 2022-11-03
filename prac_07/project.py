@@ -21,4 +21,10 @@ class Project:
                f"estimate: ${self.cost_estimate:.2f}, completion: {self.completion_percentage}%"
 
 
+def run_tests():
+    p = Project(name="Build Car Park", start_date="12/09/2021", priority=2, cost_estimate=600000.0,
+                completion_percentage=95)
+    print(p)
 
+
+run_tests()
