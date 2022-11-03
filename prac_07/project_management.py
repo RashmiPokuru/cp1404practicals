@@ -23,7 +23,7 @@ def main():
             # save_projects(file_name)
             pass
         elif choice == "D":
-            pass  # display(projects)
+            display(projects)
         elif choice == "F":
             # filter_projects()
             pass
@@ -35,6 +35,8 @@ def main():
             pass
         else:
             print("Invalid choice")
+        print(MENU)
+        choice = input(">>> ").upper()
         # save_projects(projects, FILE_NAME)
     print("Thank you for using custom-built project management software.")
 
@@ -53,10 +55,7 @@ def load(file_name):
     return projects
 
 
-# def display(projects):
-#     print("Incomplete projects: ")
-#     incomplete_projects = [project for project in projects if project.]
 
-load(FILE_NAME)
+# load(FILE_NAME)
 
-# main()
+main()
