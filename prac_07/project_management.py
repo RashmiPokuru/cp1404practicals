@@ -43,9 +43,11 @@ def load_projects(file_name):
     with open(file_name, "r") as in_file:
         in_file.readline()
         for line in in_file:
-            parts = line.split("\t")
+            parts = line.strip().split("\t")
+            print(parts)
             projects.append(parts)
-    print(projects)
-    return load_projects(FILE_NAME)
+    return load_projects(file_name)
+
+
 
 
