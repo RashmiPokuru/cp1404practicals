@@ -70,6 +70,24 @@ def display(projects):
     # print(projects)
 
 
+def update(projects):
+    for i, project in enumerate(projects):
+        print(i, project)
+    update_choice = int(input("Project choice: "))
+    print(projects[update_choice])
+    try:
+        new_percentage = float(input("New Percentage: "))
+        projects[update_choice].completion_percentage = new_percentage
+    except ValueError:
+        pass
+    try:
+        new_priority = int(input("New Priority: "))
+        projects[update_choice].priority = new_priority
+    except ValueError:
+        pass
+    print(projects)
+
+
 # load(FILE_NAME)
 
 main()
