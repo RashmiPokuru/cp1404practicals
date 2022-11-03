@@ -23,7 +23,7 @@ def main():
             # save_projects(file_name)
             pass
         elif choice == "D":
-            display(projects)
+            pass  # display(projects)
         elif choice == "F":
             # filter_projects()
             pass
@@ -46,10 +46,17 @@ def load(file_name):
         for line in in_file:
             parts = line.strip().split("\t")
             # print(parts)
-            projects.append(parts)
+            project = Project(parts[0], parts[1], parts[2], parts[3], parts[4])
+            # print(project)
+            projects.append(project)
+        # print(projects)
     return projects
 
 
-# load_projects(FILE_NAME)
+# def display(projects):
+#     print("Incomplete projects: ")
+#     incomplete_projects = [project for project in projects if project.]
 
-main()
+load(FILE_NAME)
+
+# main()
