@@ -20,6 +20,10 @@ class Project:
         return f"{self.name}, start: {self.start_date}, priority {self.priority}, " \
                f"estimate: ${self.cost_estimate:.2f}, completion: {self.completion_percentage}%"
 
+    def __repr__(self):
+        """return list objects in string format"""
+        return str(self)
+
     def is_complete(self):
         """Return true or False if completion percentage is 100 or not"""
         return self.completion_percentage == 100
