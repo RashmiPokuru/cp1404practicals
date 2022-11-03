@@ -20,11 +20,16 @@ class Project:
         return f"{self.name}, start: {self.start_date}, priority {self.priority}, " \
                f"estimate: ${self.cost_estimate:.2f}, completion: {self.completion_percentage}%"
 
+    def is_complete(self):
+        """Return true or False if completion percentage is 100 or not"""
+        return self.completion_percentage == 100
+
 
 def run_tests():
     p = Project(name="Build Car Park", start_date="12/09/2021", priority=2, cost_estimate=600000.0,
                 completion_percentage=95)
     print(p)
+    print(p.is_complete())
 
 
 run_tests()
