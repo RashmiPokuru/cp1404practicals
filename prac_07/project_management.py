@@ -23,8 +23,7 @@ def main():
             # save_projects(file_name)
             pass
         elif choice == "D":
-            # display_projects()
-            pass
+            display()
         elif choice == "F":
             # filter_projects()
             pass
