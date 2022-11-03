@@ -10,13 +10,13 @@ FILE_NAME = "projects.txt"
 
 
 def main():
-    projects = load_projects(FILE_NAME)
+    projects = load(FILE_NAME)
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
         if choice == "L":
             file_name = input("Enter the file name to load from: ")
-            projects = load_projects(file_name)
+            projects = load(file_name)
             # print(projects)
         elif choice == "S":
             file_name = input("Enter the file name to save to: ")
@@ -40,7 +40,7 @@ def main():
     print("Thank you for using custom-built project management software.")
 
 
-def load_projects(file_name):
+def load(file_name):
     projects = []
     with open(file_name, "r") as in_file:
         in_file.readline()
