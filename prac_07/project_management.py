@@ -1,3 +1,7 @@
+"""
+CP1404/CP5632 Practical - Program to load and save a data file and use a list of Project objects.
+Estimate - 2 hours
+"""
 MENU = "(L)oad projects\n(S)ave projects\n(D)isplay projects\n(F)ilter projects by date\n" \
        "(A)dd new project,(U)pdate project"
 FILE_NAME = "projects.txt"
