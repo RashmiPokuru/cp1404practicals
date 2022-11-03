@@ -46,10 +46,6 @@ def load_projects(file_name):
             parts = line.split("\t")
             projects.append(parts)
     print(projects)
+    return load_projects(FILE_NAME)
 
-    # return load_projects(FILE_NAME)
 
-
-load_projects(FILE_NAME)
-
-# loading file and menu
