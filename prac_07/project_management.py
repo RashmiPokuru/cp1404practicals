@@ -16,8 +16,8 @@ def main():
     while choice != "Q":
         if choice == "L":
             file_name = input("Enter the file name to load from: ")
-            load_projects(file_name)
-            pass
+            projects = load_projects(file_name)
+            # print(projects)
         elif choice == "S":
             file_name = input("Enter the file name to save to: ")
             # save_projects(file_name)
