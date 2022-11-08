@@ -4,10 +4,12 @@ Estimate - 2 hours
 """
 
 import datetime
+
+
 class Project:
     """Represent a project"""
 
-    def __init__(self, name, start_date, priority, cost_estimate, completion_percentage):
+    def __init__(self, name="", start_date="", priority=0, cost_estimate=0.0, completion_percentage=0.0):
         """Initialise a project"""
         self.name = name
         self.start_date = start_date
