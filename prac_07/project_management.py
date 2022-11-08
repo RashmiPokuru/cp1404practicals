@@ -19,7 +19,7 @@ def main():
             projects = load(file_name)
             print(f"{len(projects)} from {file_name} are loaded")
         elif choice == "S":
-            file_name = input("Enter the file name to save to: ")
+            # file_name = input("Enter the file name to save to: ")
             # save_projects(file_name)
             pass
         elif choice == "D":
@@ -28,11 +28,9 @@ def main():
             # filter_projects()
             pass
         elif choice == "A":
-            # add_project()
-            pass
+            add(projects)
         elif choice == "U":
             update(projects)
-            pass
         else:
             print("Invalid choice")
         print(MENU)
@@ -86,6 +84,17 @@ def update(projects):
     except ValueError:
         pass
     print(projects)
+
+
+def add(projects):
+    print("Let's add a new project")
+    project_name = input("Name: ")
+    start_date = input("Start date (dd/mm/yy): ")
+    priority = int(input("Priority: "))
+    cost_estimate = float(input("Cost estimate: "))
+    completion_percentage = int(input("Percent complete: "))
+    new_project = Project(project_name, start_date, priority, cost_estimate, completion_percentage)
+    projects.append(new_project)
 
 
 # load(FILE_NAME)
