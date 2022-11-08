@@ -51,5 +51,4 @@ def save_file(guitars, file_name):
             print(guitar.name, guitar.year, guitar.cost, sep=',', file=out_file)
 
 
-
 main()
