@@ -9,7 +9,7 @@ import datetime
 class Project:
     """Represent a project"""
 
-    def __init__(self, name="", start_date="", priority=0, cost_estimate=0.0, completion_percentage=0.0):
+    def __init__(self, name="", start_date="1/1/1111", priority=0, cost_estimate=0.0, completion_percentage=0.0):
         """Initialise a project"""
         self.name = name
         self.start_date = start_date
@@ -33,12 +33,16 @@ class Project:
     def __lt__(self, other):
         return self.priority < other.priority
 
+    def convert_to_date(self):
+        return datetime.datetime.strptime(self.start_date, "%d/%m/%Y").date()
+
 
 def run_tests():
-    p1 = Project(name="Build Car Park", start_date="12/09/2021", priority=2, cost_estimate=600000.0,
+    p1 = Project(name="Build Car Park", start_date="2/9/2021", priority=2, cost_estimate=600000.0,
                  completion_percentage=95)
-    p2 = Project(name="Test", start_date="14/08/2021", priority=10, cost_estimate=700.0,
+    p2 = Project(name="Test", start_date="14/8/2021", priority=10, cost_estimate=700.0,
                  completion_percentage=100)
+    print(p1.convert_to_date())
     print(p1)
     print(p1.is_complete())
     print(p2)
