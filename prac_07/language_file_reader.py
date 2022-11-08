@@ -8,7 +8,8 @@ import csv
 from collections import namedtuple
 
 from programming_language import ProgrammingLanguage
-NEW_LANGUAGE = "Smalltalk,Dynamic,Yes,1900"
+
+NEW_LANGUAGE = "Smalltalk,Dynamic,Yes,1900,No"
 
 
 def main():
@@ -24,23 +25,29 @@ def main():
         # print(repr(line))  # debugging
         # Strip newline from end and split it into parts (CSV)
         parts = line.strip().split(',')
+        print(parts)
         # print(parts)  # debugging
         # Reflection is stored as a string (Yes/No) and we want a Boolean
         reflection = parts[2] == "Yes"
+        # Pointer Arithmetic is stored as a string (Yes/No) and we want a Boolean
+        pointer_arithmetic = parts[4] == "Yes"
         # Construct a ProgrammingLanguage object using the elements
         # year should be an int
-        language = ProgrammingLanguage(parts[0], parts[1], reflection, int(parts[3]))
+        language = ProgrammingLanguage(parts[0], parts[1], reflection, int(parts[3]), pointer_arithmetic)
         # Add the language we've just constructed to the list
         languages.append(language)
     # Close the file as soon as we've finished reading it
     in_file.close()
-    add_language(NEW_LANGUAGE)
+    # add(NEW_LANGUAGE)
+    add()
     # Loop through and display all languages (using their str method)
     for language in languages:
         print(language)
 
 
-main()
+def add():
+    with open("languages.csv", "a") as out_file:
+        out_file.write(f"\n{NEW_LANGUAGE}")
 
 
 def using_csv():
@@ -88,11 +95,4 @@ def using_csv_namedtuple():
 
 
 # using_csv_namedtuple()
-
-def add_language(new_language):
-    """Add new language to file"""
-    with open("languages.csv", "a") as out_file:
-        out_file.write(new_language)
-
-
-
+main()
