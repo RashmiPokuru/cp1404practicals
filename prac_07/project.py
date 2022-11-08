@@ -31,7 +31,7 @@ class Project:
         return self.completion_percentage == 100
 
     def __lt__(self, other):
-        return self.priority < other.priority
+        return self.priority < other.priority or (self.convert_to_date() < other.convert_to_date() and self.priority == other.priority)
 
     def convert_to_date(self):
         return datetime.datetime.strptime(self.start_date, "%d/%m/%Y").date()
@@ -40,7 +40,7 @@ class Project:
 def run_tests():
     p1 = Project(name="Build Car Park", start_date="2/9/2021", priority=2, cost_estimate=600000.0,
                  completion_percentage=95)
-    p2 = Project(name="Test", start_date="14/8/2021", priority=10, cost_estimate=700.0,
+    p2 = Project(name="Test", start_date="14/11/2021", priority=2, cost_estimate=700.0,
                  completion_percentage=100)
     print(p1.convert_to_date())
     print(p1)
