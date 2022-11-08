@@ -3,6 +3,7 @@ CP1404/CP5632 Practical - Program to load and save a data file and use a list of
 Estimate - 2 hours
 """
 from prac_07.project import Project
+import datetime
 
 MENU = "(L)oad projects\n(S)ave projects\n(D)isplay projects\n(F)ilter projects by date\n(A)dd new project\n(U)pdate " \
        "project\n(Q)uit"
@@ -25,8 +26,7 @@ def main():
         elif choice == "D":
             display(projects)
         elif choice == "F":
-            # filter_projects()
-            pass
+            filter_projects(projects)
         elif choice == "A":
             add(projects)
         elif choice == "U":
@@ -46,7 +46,8 @@ def load(file_name):
         for line in in_file:
             parts = line.strip().split("\t")
             # print(parts)
-            project = Project(parts[0], parts[1], parts[2], parts[3], parts[4])
+            parts[1] = datetime.datetime.strptime(parts[1], "%d/%m/%Y").date()
+            project = Project(parts[0], parts[1], int(parts[2]), float(parts[3]), float(parts[4]))
             # print(project)
             projects.append(project)
         # print(projects)
@@ -96,8 +97,15 @@ def add(projects):
     new_project = Project(project_name, start_date, priority, cost_estimate, completion_percentage)
     projects.append(new_project)
 
-def filter(projects):
-    minimum_date = input("Show projects that start after date (dd/mm/yy): ")
+
+def filter_projects(projects):
+    minimum_date = datetime.datetime.strptime(input("Show projects that start after date (dd/mm/yy): "),
+                                              "%d/%m/%Y").date()
+    filtered_projects = [project for project in projects if project.start_date > minimum_date]
+    filtered_projects.sort()
+    for project in filtered_projects:
+        print(project)
+
 
 # load(FILE_NAME)
 
