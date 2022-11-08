@@ -39,15 +39,16 @@ def main():
     # Close the file as soon as we've finished reading it
     in_file.close()
     # add(NEW_LANGUAGE)
-    add()
+    add_to_file(NEW_LANGUAGE)
     # Loop through and display all languages (using their str method)
     for language in languages:
         print(language)
 
 
-def add():
+def add_to_file(new_language):
+    """Add new language to languages.csv file"""
     with open("languages.csv", "a") as out_file:
-        out_file.write(f"\n{NEW_LANGUAGE}")
+        out_file.write(f"\n{new_language}")
 
 
 def using_csv():
