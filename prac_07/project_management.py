@@ -96,6 +96,8 @@ def add(projects):
     new_project = Project(project_name, start_date, priority, cost_estimate, completion_percentage)
     projects.append(new_project)
 
+def filter(projects):
+    minimum_date = input("Show projects that start after date (dd/mm/yy): ")
 
 # load(FILE_NAME)
 
