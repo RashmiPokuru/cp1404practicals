@@ -44,6 +44,7 @@ def load_guitars(file_name):
 
 
 def save_file(guitars, file_name):
+    """Save file with new list of guitars"""
     print(guitars)
     with open(file_name, 'w') as out_file:
         for guitar in guitars:
