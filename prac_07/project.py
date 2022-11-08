@@ -3,7 +3,7 @@ CP1404/CP5632 Practical - Project class
 Estimate - 2 hours
 """
 
-
+import datetime
 class Project:
     """Represent a project"""
 
@@ -11,9 +11,9 @@ class Project:
         """Initialise a project"""
         self.name = name
         self.start_date = start_date
-        self.priority = int(priority)
-        self.cost_estimate = float(cost_estimate)
-        self.completion_percentage = int(completion_percentage)
+        self.priority = priority
+        self.cost_estimate = cost_estimate
+        self.completion_percentage = completion_percentage
 
     def __str__(self):
         """Return formatted project as string"""
