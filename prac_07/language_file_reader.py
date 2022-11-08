@@ -8,6 +8,7 @@ import csv
 from collections import namedtuple
 
 from programming_language import ProgrammingLanguage
+NEW_LANGUAGE = "Smalltalk,Dynamic,Yes,1900"
 
 
 def main():
@@ -33,7 +34,7 @@ def main():
         languages.append(language)
     # Close the file as soon as we've finished reading it
     in_file.close()
-
+    add_language(NEW_LANGUAGE)
     # Loop through and display all languages (using their str method)
     for language in languages:
         print(language)
@@ -85,4 +86,13 @@ def using_csv_namedtuple():
         print(language.name, 'was released in', language.year)
         print(repr(language))
 
+
 # using_csv_namedtuple()
+
+def add_language(new_language):
+    """Add new language to file"""
+    with open("languages.csv", "a") as out_file:
+        out_file.write(new_language)
+
+
+
