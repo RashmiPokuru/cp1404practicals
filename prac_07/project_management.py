@@ -90,7 +90,7 @@ def update(projects):
 def add(projects):
     print("Let's add a new project")
     project_name = input("Name: ")
-    start_date = input("Start date (dd/mm/yy): ")
+    start_date = datetime.datetime.strptime(input("Start date (dd/mm/yy): "), "%d/%m/%Y").date()
     priority = int(input("Priority: "))
     cost_estimate = float(input("Cost estimate: "))
     completion_percentage = int(input("Percent complete: "))
