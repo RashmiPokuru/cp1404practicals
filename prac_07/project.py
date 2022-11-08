@@ -3,13 +3,11 @@ CP1404/CP5632 Practical - Project class
 Estimate - 2 hours
 """
 
-import datetime
-
 
 class Project:
     """Represent a project"""
 
-    def __init__(self, name="", start_date="1/1/1111", priority=0, cost_estimate=0.0, completion_percentage=0.0):
+    def __init__(self, name, start_date, priority, cost_estimate, completion_percentage):
         """Initialise a project"""
         self.name = name
         self.start_date = start_date
@@ -31,10 +29,8 @@ class Project:
         return self.completion_percentage == 100
 
     def __lt__(self, other):
-        return self.priority < other.priority or (self.convert_to_date() < other.convert_to_date() and self.priority == other.priority)
-
-    def convert_to_date(self):
-        return datetime.datetime.strptime(self.start_date, "%d/%m/%Y").date()
+        return self.priority < other.priority or (
+                self.start_date < other.start_date and self.priority == other.priority)
 
 
 def run_tests():
@@ -42,7 +38,6 @@ def run_tests():
                  completion_percentage=95)
     p2 = Project(name="Test", start_date="14/11/2021", priority=2, cost_estimate=700.0,
                  completion_percentage=100)
-    print(p1.convert_to_date())
     print(p1)
     print(p1.is_complete())
     print(p2)
