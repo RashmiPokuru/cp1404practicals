@@ -4,6 +4,7 @@ Estimate - 2 hours
 """
 from prac_07.project import Project
 import datetime
+import operator
 
 MENU = "(L)oad projects\n(S)ave projects\n(D)isplay projects\n(F)ilter projects by date\n(A)dd new project\n(U)pdate " \
        "project\n(Q)uit"
@@ -102,7 +103,7 @@ def filter_projects(projects):
     minimum_date = datetime.datetime.strptime(input("Show projects that start after date (dd/mm/yy): "),
                                               "%d/%m/%Y").date()
     filtered_projects = [project for project in projects if project.start_date > minimum_date]
-    filtered_projects.sort()
+    filtered_projects.sort(key=operator.attrgetter("start_date"))
     for project in filtered_projects:
         print(project)
 
