@@ -9,6 +9,7 @@ import operator
 MENU = "(L)oad projects\n(S)ave projects\n(D)isplay projects\n(F)ilter projects by date\n(A)dd new project\n(U)pdate " \
        "project\n(Q)uit"
 FILE_NAME = "projects.txt"
+HEADER = "Name	Start Date	Priority	Cost Estimate	Completion Percentage"
 
 
 def main():
@@ -47,8 +48,9 @@ def load(file_name):
         for line in in_file:
             parts = line.strip().split("\t")
             # print(parts)
-            parts[1] = datetime.datetime.strptime(parts[1], "%d/%m/%Y").date()
-            project = Project(parts[0], parts[1], int(parts[2]), float(parts[3]), float(parts[4]))
+            # parts[1] = datetime.datetime.strptime(parts[1], "%d/%m/%Y").date()
+            project = Project(parts[0], datetime.datetime.strptime(parts[1], "%d/%m/%Y").date(),
+                              int(parts[2]), float(parts[3]), float(parts[4]))
             # print(project)
             projects.append(project)
         # print(projects)
@@ -85,7 +87,7 @@ def update(projects):
         projects[update_choice].priority = new_priority
     except ValueError:
         pass
-    print(projects)
+    # print(projects)
 
 
 def add(projects):
@@ -110,6 +112,7 @@ def filter_projects(projects):
 
 def save(projects, file_name):
     with open(file_name, "w") as out_file:
+        print(HEADER, file=out_file)
         for project in projects:
             print(project.name, project.start_date, project.priority, project.cost_estimate,
                   project.completion_percentage, sep=',', file=out_file)
