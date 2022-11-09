@@ -109,12 +109,18 @@ def add(projects):
 
 
 def filter_projects(projects):
-    minimum_date = datetime.datetime.strptime(input("Show projects that start after date (dd/mm/yy): "),
-                                              "%d/%m/%Y").date()
-    filtered_projects = [project for project in projects if project.start_date > minimum_date]
-    filtered_projects.sort(key=operator.attrgetter("start_date"))
-    for project in filtered_projects:
-        print(project)
+    is_valid_date = False
+    while not is_valid_date:
+        try:
+            minimum_date = datetime.datetime.strptime(input("Show projects that start after date (dd/mm/yy): "),
+                                                      "%d/%m/%Y").date()
+            filtered_projects = [project for project in projects if project.start_date > minimum_date]
+            filtered_projects.sort(key=operator.attrgetter("start_date"))
+            for project in filtered_projects:
+                print(project)
+            is_valid_date = True
+        except ValueError:
+            print("Invalid date")
 
 
 def save(projects, file_name):
