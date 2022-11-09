@@ -31,10 +31,12 @@ class Project:
         return self.completion_percentage == 100
 
     def __lt__(self, other):
+        """Return True/False if one value is less than other or not."""
         return self.priority < other.priority
 
 
 def run_tests():
+    """Test project class."""
     p1 = Project(name="Build Car Park", start_date=datetime.datetime.strptime("9/1/2021", '%d/%m/%Y'), priority=2,
                  cost_estimate=600000.0,
                  completion_percentage=95)
