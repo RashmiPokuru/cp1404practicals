@@ -114,8 +114,8 @@ def save(projects, file_name):
     with open(file_name, "w") as out_file:
         print(HEADER, file=out_file)
         for project in projects:
-            print(project.name, project.start_date, project.priority, project.cost_estimate,
-                  project.completion_percentage, sep=',', file=out_file)
+            print(f"{project.name}\t{datetime.datetime.strftime(project.start_date, '%d/%m/%Y')}\t{project.priority}\t"
+                  f"{project.cost_estimate}\t{project.completion_percentage}", file=out_file)
 
 
 # load(FILE_NAME)
