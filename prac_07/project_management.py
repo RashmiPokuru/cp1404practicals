@@ -1,6 +1,7 @@
 """
 CP1404/CP5632 Practical - Program to load and save a data file and use a list of Project objects.
 Estimate - 2 hours
+Actual - 4 hours
 """
 from prac_07.project import Project
 import datetime
@@ -13,6 +14,7 @@ HEADER = "Name	Start Date	Priority	Cost Estimate	Completion Percentage"
 
 
 def main():
+    """Load, save and use projects in the file."""
     projects = load(FILE_NAME)
     print(MENU)
     choice = input(">>> ").upper()
@@ -42,6 +44,7 @@ def main():
 
 
 def load(file_name):
+    """Load file"""
     projects = []
     is_valid_file = False
     while not is_valid_file:
@@ -65,6 +68,7 @@ def load(file_name):
 
 
 def display(projects):
+    """Display incomplete and completed projects."""
     print("Incomplete projects: ")
     incomplete_projects = [project for project in projects if not project.is_complete()]
     incomplete_projects.sort()
@@ -80,6 +84,7 @@ def display(projects):
 
 
 def update(projects):
+    """Update percentage/ priority of a user chosen project."""
     for i, project in enumerate(projects):
         print(i, project)
     update_choice = int(input("Project choice: "))
@@ -98,6 +103,7 @@ def update(projects):
 
 
 def add(projects):
+    """Add new project to the list of projects."""
     print("Let's add a new project")
     project_name = input("Name: ")
     start_date = datetime.datetime.strptime(input("Start date (dd/mm/yy): "), "%d/%m/%Y").date()
@@ -109,6 +115,7 @@ def add(projects):
 
 
 def filter_projects(projects):
+    """Filter and display projects with start date after user inputted date."""
     is_valid_date = False
     while not is_valid_date:
         try:
@@ -124,6 +131,7 @@ def filter_projects(projects):
 
 
 def save(projects, file_name):
+    """Save projects to file"""
     with open(file_name, "w") as out_file:
         print(HEADER, file=out_file)
         for project in projects:
