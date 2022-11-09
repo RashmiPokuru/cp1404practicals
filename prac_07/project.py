@@ -35,9 +35,11 @@ class Project:
 
 
 def run_tests():
-    p1 = Project(name="Build Car Park", start_date=datetime.datetime.strptime("9/1/2021", '%d/%m/%Y'), priority=2, cost_estimate=600000.0,
+    p1 = Project(name="Build Car Park", start_date=datetime.datetime.strptime("9/1/2021", '%d/%m/%Y'), priority=2,
+                 cost_estimate=600000.0,
                  completion_percentage=95)
-    p2 = Project(name="Test", start_date=datetime.datetime.strptime("9/2/2021", '%d/%m/%Y'), priority=3, cost_estimate=700.0,
+    p2 = Project(name="Test", start_date=datetime.datetime.strptime("9/2/2021", '%d/%m/%Y'), priority=3,
+                 cost_estimate=700.0,
                  completion_percentage=100)
     print(p1)
     print(p1.is_complete())
