@@ -21,8 +21,8 @@ def main():
             projects = load(file_name)
             print(f"{len(projects)} from {file_name} are loaded")
         elif choice == "S":
-            # file_name = input("Enter the file name to save to: ")
-            # save_projects(file_name)
+            file_name = input("Enter the file name to save to: ")
+            save(projects, file_name)
             pass
         elif choice == "D":
             display(projects)
@@ -36,7 +36,7 @@ def main():
             print("Invalid choice")
         print(MENU)
         choice = input(">>> ").upper()
-        # save_projects(projects, FILE_NAME)
+        save(projects, FILE_NAME)
     print("Thank you for using custom-built project management software.")
 
 
@@ -106,6 +106,13 @@ def filter_projects(projects):
     filtered_projects.sort(key=operator.attrgetter("start_date"))
     for project in filtered_projects:
         print(project)
+
+
+def save(projects, file_name):
+    with open(file_name, "w") as out_file:
+        for project in projects:
+            print(project.name, project.start_date, project.priority, project.cost_estimate,
+                  project.completion_percentage, sep=',', file=out_file)
 
 
 # load(FILE_NAME)
