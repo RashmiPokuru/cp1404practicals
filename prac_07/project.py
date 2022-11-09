@@ -29,8 +29,7 @@ class Project:
         return self.completion_percentage == 100
 
     def __lt__(self, other):
-        return self.priority < other.priority or (
-                self.start_date < other.start_date and self.priority == other.priority)
+        return self.priority < other.priority
 
 
 def run_tests():
