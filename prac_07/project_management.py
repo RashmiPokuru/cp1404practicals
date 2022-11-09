@@ -43,17 +43,24 @@ def main():
 
 def load(file_name):
     projects = []
-    with open(file_name, "r") as in_file:
-        in_file.readline()
-        for line in in_file:
-            parts = line.strip().split("\t")
-            # print(parts)
-            # parts[1] = datetime.datetime.strptime(parts[1], "%d/%m/%Y").date()
-            project = Project(parts[0], datetime.datetime.strptime(parts[1], "%d/%m/%Y").date(),
-                              int(parts[2]), float(parts[3]), float(parts[4]))
-            # print(project)
-            projects.append(project)
-        # print(projects)
+    is_valid_file = False
+    while not is_valid_file:
+        try:
+            with open(file_name, "r") as in_file:
+                in_file.readline()
+                for line in in_file:
+                    parts = line.strip().split("\t")
+                    # print(parts)
+                    # parts[1] = datetime.datetime.strptime(parts[1], "%d/%m/%Y").date()
+                    project = Project(parts[0], datetime.datetime.strptime(parts[1], "%d/%m/%Y").date(),
+                                      int(parts[2]), float(parts[3]), float(parts[4]))
+                    # print(project)
+                    projects.append(project)
+                # print(projects)
+                is_valid_file = True
+        except FileNotFoundError:
+            print("Invalid file")
+            file_name = input("Enter the file name to load from: ")
     return projects
 
 
