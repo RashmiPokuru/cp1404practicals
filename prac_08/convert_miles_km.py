@@ -25,7 +25,7 @@ class MilesConverterApp(App):
         """Convert valid input miles to kilometers"""
         self.number_of_kilometers = str(self.get_valid_number() * MILES_TO_KILOMETER)
 
-    def handle_update(self, value):
+    def handle_increment(self, value):
         """Increase number of miles by value when user press Up/Down button"""
         self.root.ids.input_miles.text = str(self.get_valid_number() + value)
 
