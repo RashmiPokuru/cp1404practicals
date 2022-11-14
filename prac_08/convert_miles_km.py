@@ -18,10 +18,17 @@ class MilesConverterApp(App):
         return self.root
 
     def handle_convert(self):
+        self.number_of_kilometers = str(self.get_valid_number() * 1.60934)
+
+    def handle_update(self, value):
+        self.root.ids.input_miles.text = str(self.get_valid_number() + value)
+
+    def get_valid_number(self):
         try:
-            self.number_of_kilometers = str(float(self.root.ids.input_miles.text) * 1.60934)
+            value = float(self.root.ids.input_miles.text)
+            return value
         except ValueError:
-            pass
+            return 0.0
 
 
 MilesConverterApp().run()
