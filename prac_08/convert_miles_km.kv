@@ -3,9 +3,10 @@ BoxLayout:
     BoxLayout:
         TextInput:
             id: input_miles
-            text: ''
+            text: '1'
             font_size: 48
             size_hint_x: 0.8
+            multiline: False
         BoxLayout:
             orientation: 'vertical'
             size_hint_x: 0.2
@@ -21,7 +22,7 @@ BoxLayout:
     Button:
         text: 'Convert m to km'
         font_size: 36
+        on_press: app.handle_convert()
     Label:
-        id: output_label
-        text: ''
+        text: app.number_of_kilometers
         font_size: 48
