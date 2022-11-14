@@ -7,6 +7,8 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import StringProperty
 
+MILES_TO_KILOMETER = 1.60934
+
 
 class MilesConverterApp(App):
     number_of_kilometers = StringProperty()
@@ -18,7 +20,7 @@ class MilesConverterApp(App):
         return self.root
 
     def handle_convert(self):
-        self.number_of_kilometers = str(self.get_valid_number() * 1.60934)
+        self.number_of_kilometers = str(self.get_valid_number() * MILES_TO_KILOMETER)
 
     def handle_update(self, value):
         self.root.ids.input_miles.text = str(self.get_valid_number() + value)
