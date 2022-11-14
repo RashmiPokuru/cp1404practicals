@@ -30,7 +30,7 @@ class MilesConverterApp(App):
             value = float(self.root.ids.input_miles.text)
             return value
         except ValueError:
-            return 0.0
+            return 0
 
 
 MilesConverterApp().run()
