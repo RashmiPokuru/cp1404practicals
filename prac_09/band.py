@@ -11,8 +11,8 @@ class Band:
         """Initialize Band with empty collections of musicians and instruments."""
         self.name = name
         self.musicians = []
-        self.instruments = []
 
     def __str__(self):
         """Return string representation of Band."""
         return f"{self.name} ({','.join(str(musician) for musician in self.musicians)})"
+
