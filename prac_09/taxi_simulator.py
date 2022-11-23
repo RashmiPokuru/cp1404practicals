@@ -16,23 +16,34 @@ def main():
     bill_to_date = 0
     print("Let's drive!")
     print(MENU_STRING)
-    option = input(">>>").upper()
+    option = input(">>> ").upper()
     while option != "Q":
         if option == "C":
-            current_taxi = choose(taxis)
+            print("Taxis available: ")
+            display_available_taxis(taxis)
+            taxi_choice = int(input("Choose taxi: "))
+            try:
+                current_taxi = taxis[taxi_choice]
+            except IndexError:
+                print("Invalid taxi choice")
         elif option == "D":
-            pass
+            if current_taxi:
+                current_taxi.start_fare()
+                distance = get_non_negative_number()
+                current_taxi.drive(distance)
+                trip_cost = current_taxi.get_fare()
+                print(f"Your {current_taxi.name} trip cost you {trip_cost:.2f}")
+                bill_to_date += trip_cost
+            else:
+                print("You need to choose a taxi before you can drive")
         else:
             print("Invalid option")
         print(f"Bill to date: ${bill_to_date:.2f}")
         print(MENU_STRING)
-        option = input(">>>").upper()
-
-
-def choose(taxis):
-    """Choose taxi from list of available taxis."""
+        option = input(">>> ").upper()
+    print(f"Total trip cost: ${bill_to_date:.2f}")
+    print("Taxis are now:")
     display_available_taxis(taxis)
-    taxi_choice = get_valid_number(MINIMUM_NUMBER, len(taxis))
 
 
 def display_available_taxis(taxis):
@@ -41,17 +52,16 @@ def display_available_taxis(taxis):
         print(f"{i} - {taxi}")
 
 
-def get_valid_number(minimum_number, maximum_number):
-    """Get valid number in the range."""
+def get_non_negative_number():
+    """Get non-negative number"""
     try:
-        number = int(input(">>> "))
-        if number < minimum_number or number > maximum_number:
-            print("Invalid taxi choice")
+        number = int(input("Drive how far? "))
+        if number < 0:
+            print("Invalid number")
         else:
-            is_valid_number = True
             return number
     except ValueError:
-        print("Invalid taxi choice")
+        print("Invalid number")
 
 
 main()
