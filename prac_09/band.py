@@ -20,6 +20,16 @@ class Band:
         """Add musician to band."""
         self.musicians.append(musician)
 
+    def play(self):
+        """Return play message."""
+        play_message_lines = []
+        for musician in self.musicians:
+            if len(musician.instruments) != 0:
+                play_message_lines.append(f"{musician.name} is playing: {musician.instruments[0]}")
+            else:
+                play_message_lines.append(f"{musician.name} needs an instrument!")
+        return "\n".join(play_message_lines)
+
 
 if __name__ == '__main__':
     from musician import Musician
