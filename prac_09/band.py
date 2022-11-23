@@ -51,3 +51,4 @@ if __name__ == '__main__':
     kevin_figueiredo = Musician("Kevin Figueiredo")
     band.musicians.append(kevin_figueiredo)
     print(band)
+    print(band.play())
