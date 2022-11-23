@@ -14,15 +14,15 @@ def main():
     current_taxi = None
     print("Let's drive!")
     print(MENU_STRING)
-    choice = input(">>>").upper()
-    while choice != "Q":
-        if choice == "C":
+    option = input(">>>").upper()
+    while option != "Q":
+        if option == "C":
             current_taxi = choose(taxis)
-        elif choice == "D":
+        elif option == "D":
             pass
         else:
             print("Invalid option")
-        choice = input(">>>").upper()
+        option = input(">>>").upper()
 
 
 def choose(taxis):
@@ -35,6 +35,8 @@ def display_available_taxis(taxis):
     """Display available taxis."""
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
+        
+
 
 
 main()
