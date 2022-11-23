@@ -17,12 +17,24 @@ def main():
     choice = input(">>>").upper()
     while choice != "Q":
         if choice == "C":
-            choose()
+            current_taxi = choose(taxis)
         elif choice == "D":
-            drive()
+            pass
         else:
             print("Invalid option")
         choice = input(">>>").upper()
+
+
+def choose(taxis):
+    """Choose taxi from list of available taxis."""
+    display_available_taxis(taxis)
+    pass
+
+
+def display_available_taxis(taxis):
+    """Display available taxis."""
+    for i, taxi in enumerate(taxis):
+        print(f"{i} - {taxi}")
 
 
 main()
