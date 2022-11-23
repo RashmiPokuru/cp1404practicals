@@ -21,6 +21,6 @@ class SilverServiceTaxi(Taxi):
 
     def __str__(self):
         """Return string representation of SilverServiceTaxi."""
-        return f"{super().__str__()} plus flagfall of ${self.flagfall}"
+        return f"{super().__str__()} plus flagfall of ${self.flagfall:.2f}"
 
 
