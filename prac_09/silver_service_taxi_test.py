@@ -9,8 +9,7 @@ def main():
     """Test SilverServiceTaxi class"""
     silver_service_taxi = SilverServiceTaxi("Silver Taxi", 150, 2)
     silver_service_taxi.drive(18)
-    print(silver_service_taxi)
-    print(silver_service_taxi.get_fare())
+    print(f"{silver_service_taxi} : Trip fare is ${silver_service_taxi.get_fare():.2f}")
 
 
 main()
