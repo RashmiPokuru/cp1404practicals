@@ -19,3 +19,25 @@ class Band:
     def add(self, musician):
         """Add musician to band."""
         self.musicians.append(musician)
+
+
+if __name__ == '__main__':
+    from musician import Musician
+    from guitar import Guitar
+
+    band = Band()
+    assert not band.name
+    assert not band.musicians
+    band.name = "Extreme"
+    nuon = Musician("Nuno Bettencourt")
+    nuon.instruments.append(Guitar("Washburn N4", 1990, 2499.95))
+    nuon.instruments.append(Guitar("Takamine acoustic", 1986, 1200))
+    band.musicians.append(nuon)
+    gary_cherone = Musician("Gary Cherone")
+    band.musicians.append(gary_cherone)
+    pat_badger = Musician("Pat Badger")
+    pat_badger.instruments.append(Guitar("Mouradian CS-74 Bass", 2009, 1500))
+    band.musicians.append(pat_badger)
+    kevin_figueiredo = Musician("Kevin Figueiredo")
+    band.musicians.append(kevin_figueiredo)
+    print(band)
