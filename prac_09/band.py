@@ -12,3 +12,8 @@ class Band:
         self.name = name
         self.musicians = []
         self.instruments = []
+
+    def __str__(self):
+        """Return string representation of Band."""
+        return f"{self.name} ({self.musicians})"
+
