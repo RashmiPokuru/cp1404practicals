@@ -15,5 +15,4 @@ class Band:
 
     def __str__(self):
         """Return string representation of Band."""
-        return f"{self.name} ({self.musicians})"
-
+        return f"{self.name} ({','.join(str(musician) for musician in self.musicians)})"
