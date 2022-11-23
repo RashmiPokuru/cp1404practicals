@@ -1,5 +1,5 @@
 """Band example with list of musicians."""
-from my_band import Band
+from band import Band
 from musician import Musician
 from guitar import Guitar
 
