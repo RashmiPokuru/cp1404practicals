@@ -13,7 +13,7 @@ def main():
     while page_title != '':
         try:
             page = wikipedia.page(page_title, auto_suggest=False)
-            print(f"Summary of {page} is : {page.summary}")
+            print(f"Title: {page.title}\nSummary: {page.summary}\nURL: {page.url}")
         except wikipedia.exceptions.DisambiguationError as e:
             print("Available options:")
             print(e.options)
