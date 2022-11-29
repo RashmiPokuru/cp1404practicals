@@ -8,7 +8,7 @@ MENU = "(P)age title / Search phrase: "
 
 
 def main():
-    """Display the details on wikipedia for user input search text/ title."""
+    """Display the details from wikipedia for user input search text/ title."""
     page_title = input("Page title / Search phrase: ")
     while page_title != '':
         try:
