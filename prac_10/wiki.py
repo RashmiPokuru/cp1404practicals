@@ -11,8 +11,11 @@ def main():
     """Display the details on wikipedia for user input search text/ title."""
     page_title = input("Page title / Search phrase: ")
     while page_title != '':
-        page = wikipedia.page(page_title)
-        print(f"Summary of {page} is : {page.summary}")
+        try:
+            page = wikipedia.page(page_title, auto_suggest=False)
+            print(f"Summary of {page} is : {page.summary}")
+        except wikipedia.exceptions.DisambiguationError as e:
+            print(e.options)
         page_title = input("Page title / Search phrase: ")
     print("Have a good day!")
 
