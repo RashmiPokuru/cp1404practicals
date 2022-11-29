@@ -4,8 +4,6 @@ Extract data from wikipedia using API
 """
 import wikipedia
 
-MENU = "(P)age title / Search phrase: "
-
 
 def main():
     """Display the details from wikipedia for user input search text/ title."""
