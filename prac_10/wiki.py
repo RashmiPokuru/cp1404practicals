@@ -15,7 +15,10 @@ def main():
             page = wikipedia.page(page_title, auto_suggest=False)
             print(f"Summary of {page} is : {page.summary}")
         except wikipedia.exceptions.DisambiguationError as e:
+            print("Available options:")
             print(e.options)
+        except wikipedia.exceptions.PageError:
+            print("Page doesn't exist. Try another one")
         page_title = input("Page title / Search phrase: ")
     print("Have a good day!")
 
